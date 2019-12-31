@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: local
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    contexts: ${spring.profiles.active}

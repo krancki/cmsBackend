@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+  <changeSet id="initialization" author="krancki">
+
+    <createTable tableName="app_user">
+      <column name="id" type="bigint"/>
+      <column name="is_enable" type="boolean"/>
+      <column name="login" type="varchar"/>
+      <column name="username" type="varchar"/>
+      <column name="password" type="varchar"/>
+      <column name="system_roles" type="varchar"/>
+    </createTable>
+    <addPrimaryKey tableName="app_user" columnNames="id"/>
+    <createSequence incrementBy="1" startValue="1000" sequenceName="user_seq_id"/>
+
+    <createTable tableName="app_user_roles">
+      <column name="user_id" type="bigint"/>
+      <column name="role" type="varchar(255)"/>
+    </createTable>
+    <addPrimaryKey tableName="app_user_roles" columnNames="user_id, role"/>
+    <addForeignKeyConstraint constraintName="user_roles"
+                             baseTableName="app_user_roles"
+                             baseColumnNames="user_id"
+                             referencedTableName="app_user"
+                             referencedColumnNames="id"/>
+  </changeSet>
+
+
+</databaseChangeLog>
