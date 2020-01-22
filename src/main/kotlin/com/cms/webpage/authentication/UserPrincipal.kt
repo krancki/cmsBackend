@@ -20,7 +20,7 @@ class UserPrincipal(
     }
 
     override fun getUsername(): String {
-        return user.login!!
+        return user.login
     }
 
     override fun isCredentialsNonExpired(): Boolean {

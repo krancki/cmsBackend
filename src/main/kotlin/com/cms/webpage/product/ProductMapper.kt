@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 class ProductMapper {
 
     fun mapProductToProductDTO(product: Product): ProductDTO {
-        return ProductDTO(product.name, product.description, product.price)
+        return ProductDTO(product.id, product.name, product.description, product.price)
     }
 
     fun mapDtoToProduct(createProductDTO: CreateProductDTO): Product{

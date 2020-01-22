@@ -34,7 +34,7 @@ class SecurityConfig(
     @Bean
     fun corsConfigurationSource(): CorsConfigurationSource? {
         val configuration = CorsConfiguration()
-        configuration.allowedOrigins = listOf("http://localhost:3000")
+        configuration.allowedOrigins = listOf("*")
         configuration.allowedMethods = listOf("*")
         configuration.allowCredentials = true
         configuration.allowedHeaders = listOf("*")
@@ -57,11 +57,10 @@ class SecurityConfig(
             ?.antMatchers(HttpMethod.POST, "/api/user")?.permitAll()
             ?.antMatchers(HttpMethod.GET, "/api/website")?.permitAll()
             ?.and()
-            ?.formLogin()?.loginPage("/login")?.permitAll()
-            ?.defaultSuccessUrl("/")
+            ?.formLogin()?.loginPage("/api/login")?.permitAll()
             ?.successHandler(customAuthenticationSuccessHandler)
             ?.and()
-            ?.logout()?.permitAll()?.logoutSuccessUrl("/")
+            ?.logout()?.logoutUrl("/api/logout")?.permitAll()
             ?.and()
             ?.httpBasic()
             ?.and()

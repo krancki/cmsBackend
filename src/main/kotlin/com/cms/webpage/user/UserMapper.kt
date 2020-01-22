@@ -7,5 +7,11 @@ import org.springframework.stereotype.Component
 class UserMapper {
 
     fun mapUserToUserDTO(user: User) =
-        UserDTO(id = user.id, isEnable = user.isEnable, login = user.login, username = user.username, systemRole = user.systemRoles)
+        UserDTO(
+            id = user.id,
+            isEnable = user.isEnable,
+            login = user.login,
+            username = user.username,
+            systemRole = user.systemRoles
+        )
 }
