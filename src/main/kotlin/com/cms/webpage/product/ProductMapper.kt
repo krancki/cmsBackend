@@ -12,7 +12,7 @@ class ProductMapper {
         return ProductDTO(product.id, product.name, product.description, product.price)
     }
 
-    fun mapDtoToProduct(createProductDTO: CreateProductDTO): Product{
+    fun mapDtoToProduct(createProductDTO: CreateProductDTO): Product {
         return Product(
             id = null,
             name = createProductDTO.name,
@@ -21,7 +21,7 @@ class ProductMapper {
         )
     }
 
-    fun mapDtoToProduct(id:Long ,editProductDTO: EditProductDTO): Product{
+    fun mapDtoToProduct(id: Long, editProductDTO: EditProductDTO): Product {
         return Product(
             id = id,
             name = editProductDTO.name,

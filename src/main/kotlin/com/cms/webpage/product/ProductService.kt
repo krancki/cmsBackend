@@ -27,7 +27,7 @@ class ProductService(
         return productRepository.save(product)
     }
 
-    fun editProduct( editProduct: Product) {
+    fun editProduct(editProduct: Product) {
         permissionChecker.hasPermissionOrThrow(Permission.MODIFY_PRODUCT)
         productRepository.findById(editProduct.id!!).orElseThrow { throw ResponseStatusException(HttpStatus.NOT_FOUND) }
         productRepository.save(editProduct)

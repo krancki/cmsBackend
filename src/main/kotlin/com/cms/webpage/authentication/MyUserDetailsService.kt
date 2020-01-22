@@ -16,7 +16,7 @@ class MyUserDetailsService(
 
     override fun loadUserByUsername(login: String): UserDetails {
 
-        val user = userRepository.findByLogin(login).orElseThrow{ ResponseStatusException(HttpStatus.NOT_FOUND, "User not found:$login")}
+        val user = userRepository.findByLogin(login).orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND, "User not found:$login") }
         return UserPrincipal(user)
     }
 }

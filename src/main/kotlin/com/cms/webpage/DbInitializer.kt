@@ -35,10 +35,10 @@ class DbInitializer(
 
     fun createProducts() {
 
-        productRepository.save(Product(null,"Głośnik","Mały duży glośnik", BigDecimal.valueOf(120)))
-        productRepository.save(Product(null,"Telewizior","Telewizja polska", BigDecimal.valueOf(1299.99)))
-        productRepository.save(Product(null,"Telefon","Telefonik", BigDecimal.valueOf(99)))
-        productRepository.save(Product(null,"Lampa","Lambionek", BigDecimal.valueOf(60)))
+        productRepository.save(Product(null, "Głośnik", "Mały duży glośnik", BigDecimal.valueOf(120)))
+        productRepository.save(Product(null, "Telewizior", "Telewizja polska", BigDecimal.valueOf(1299.99)))
+        productRepository.save(Product(null, "Telefon", "Telefonik", BigDecimal.valueOf(99)))
+        productRepository.save(Product(null, "Lampa", "Lambionek", BigDecimal.valueOf(60)))
 
     }
 }

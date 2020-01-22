@@ -33,7 +33,7 @@ class UserController(
     @PostMapping("/{id}/change-role")
     fun changeUserRole(
         @PathVariable("id") id: Long,
-        @RequestBody systemRoles: Set<SystemRole>){
+        @RequestBody systemRoles: Set<SystemRole>) {
         userService.changeUserRoles(id, systemRoles)
     }
 }

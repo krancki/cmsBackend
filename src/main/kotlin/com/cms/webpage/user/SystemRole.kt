@@ -1,7 +1,5 @@
 package com.cms.webpage.user
 
-import com.cms.webpage.user.Permission
-
 enum class SystemRole(
     val label: String,
     val permissions: List<Permission> = emptyList()

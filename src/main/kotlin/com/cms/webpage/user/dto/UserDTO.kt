@@ -8,4 +8,4 @@ class UserDTO(
     val login: String,
     val username: String,
     val systemRole: Set<SystemRole>
-    )
+)
